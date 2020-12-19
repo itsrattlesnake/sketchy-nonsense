@@ -1,5 +1,5 @@
 require("dotenv").config();
-const PORT = 3000;
+const { PORT = 3000 } = process.env;
 const express = require("express");
 const server = express();
 const apiRouter = require("./api");
@@ -40,3 +40,6 @@ server.get("/add/:first/to/:second", (req, res, next) => {
     }</h1>`
   );
 });
+
+//Creating app... done, ⬢ nameless-oasis-79142
+//https://nameless-oasis-79142.herokuapp.com/ | https://git.heroku.com/nameless-oasis-79142.git
