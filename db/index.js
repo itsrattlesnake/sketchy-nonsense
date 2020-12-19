@@ -1,17 +1,15 @@
 const { Client } = require("pg"); // imports the pg module
 const jwt = require("jsonwebtoken");
 
-const client = new Client({
-  user: "jesse",
-  host: "localhost",
-  database: "juicebox_dev",
-  password: "qwerty",
-  port: 5432,
-});
-
-/**
- * USER Methods
- */
+const client = new Client(
+  process.env.DATABASE_URL || "postgres://localhost:5432/juicebox-dev"
+);
+//  user: "jesse",
+//  host: "localhost",
+//  database: "juicebox_dev",
+//  password: "qwerty",
+//  port: 5432,
+//});
 
 async function createUser({ username, password, name, location }) {
   try {
